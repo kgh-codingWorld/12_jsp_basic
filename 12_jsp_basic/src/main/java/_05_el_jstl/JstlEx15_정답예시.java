@@ -10,33 +10,32 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/jstlEx03")
-public class JstlEx03 extends HttpServlet {
+@WebServlet("/jstlEx15_정답예시")
+public class JstlEx15_정답예시 extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String[] datas = {"데이터1" , "데이터2" , "데이터3" , "데이터4" , "데이터5"};
-		request.setAttribute("datas" , datas);
-		
 		ArrayList<ProductDTO> productList = new ArrayList<ProductDTO>();
+		
 		for (int i = 1; i < 10; i++) {
-			ProductDTO productDTO = new ProductDTO();
-			productDTO.setPdCd("P00" + i);
-			productDTO.setPdNm("기계식키보드" + i);
-			productDTO.setDeptCd("dept" + i);
-			productDTO.setDeptNm("생산부서" + i);
-			productDTO.setMgrCd("mgr" + i);
-			productDTO.setMgrNm("홍길동" + i);
-			productList.add(productDTO);
+			ProductDTO product = new ProductDTO();
+			product.setPdCd("P00" + i);
+			product.setPdNm("기계식키보드" + i);
+			product.setDeptCd("dept" + i);
+			product.setDeptNm("생산부서" + i);
+			product.setMgrCd("m" + i);
+			product.setMgrNm("홍길동" + i);
+			productList.add(product);
 		}
 		
-		request.setAttribute("productList", productList);
+		request.setAttribute("productList" , productList);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("chapter05_el_jstl/jstlEx03.jsp"); 
+		RequestDispatcher dis = request.getRequestDispatcher("chapter05_el_jstl/jstlEx15_정답예시.jsp"); 
 		dis.forward(request, response);
 		
 	}
+
 
 }

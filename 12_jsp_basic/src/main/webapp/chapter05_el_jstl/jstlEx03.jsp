@@ -76,6 +76,34 @@
 	<a><c:forEach var="data" items="${datas }" varStatus="i"> <%-- items="data" 틀림 --%>
 		<p id="data${i.index }" >${i.first} / ${i.index} / ${i.count} / ${data }</p> 
 	</c:forEach></a>
-	
+	<hr>
+	<table border="1">
+		<tr>
+			<th>상품코드</th>
+			<th>상품이름</th>
+			<th>부서코드</th>
+			<th>부서이름</th>
+			<th>담당자코드</th>
+			<th>담당자이름</th>
+		</tr>
+		<c:choose>
+			<c:when test="${empty productList }">
+				<td colspan="6" align="center">조회된 데이터가 없습니다.</td>
+			</c:when>
+			<c:otherwise>
+				<c:forEach var="productDTO" items="${productList}">
+			<tr>
+				<td>${productDTO.pdCd }</td>
+				<td>${productDTO.pdNm }</td>
+				<td>${productDTO.deptCd }</td>
+				<td>${productDTO.deptNm }</td>
+				<td>${productDTO.mgrCd }</td>
+				<td>${productDTO.mgrNm }</td>
+			</tr>
+		</c:forEach>
+			</c:otherwise>
+		</c:choose>	
+		
+	</table>
 </body>
 </html>
