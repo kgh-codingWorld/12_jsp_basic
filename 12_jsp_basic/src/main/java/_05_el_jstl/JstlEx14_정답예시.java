@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/jstlEx14_정답예시")
+@WebServlet("/jstlEx14_연습")
 public class JstlEx14_정답예시 extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -20,7 +20,7 @@ public class JstlEx14_정답예시 extends HttpServlet {
 		
 		request.setAttribute("pdCdList" , pdCdList);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("chapter05_el_jstl/jstlEx14_정답예시.jsp"); 
+		RequestDispatcher dis = request.getRequestDispatcher("chapter05_el_jstl/jstlEx14_연습.jsp"); 
 		dis.forward(request, response);
 		
 	}
