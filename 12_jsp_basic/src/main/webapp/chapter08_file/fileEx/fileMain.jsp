@@ -29,7 +29,7 @@
 	
 	 -->
 	
-	<form>
+	<form action="upload1" method="post" enctype="multipart/form-data">
 		<fieldset>
 			<legend>파일 업로드1</legend>
 			<p>업로더 : <input type="text" ></p>
